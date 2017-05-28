@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LungCancer", "LungCancer\LungCancer.csproj", "{07A5473E-386C-4482-B6DC-CA6CF9B36CBC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LungCancer.NetTrainer", "LungCancer.NetTrainer\LungCancer.NetTrainer.csproj", "{D4C66704-A26D-4153-99BB-46FD529A8D44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LungCancer.Common", "LungCancer.Common\LungCancer.Common.csproj", "{DAC2615B-1D7C-438F-971E-E5E6194DB90A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LungCancer.TrainingDataGenerator", "LungCancer.TrainingDataGenerator\LungCancer.TrainingDataGenerator.csproj", "{BF89F24F-F680-4B30-B8A9-50D96BB7642F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{07A5473E-386C-4482-B6DC-CA6CF9B36CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07A5473E-386C-4482-B6DC-CA6CF9B36CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07A5473E-386C-4482-B6DC-CA6CF9B36CBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C66704-A26D-4153-99BB-46FD529A8D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C66704-A26D-4153-99BB-46FD529A8D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C66704-A26D-4153-99BB-46FD529A8D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C66704-A26D-4153-99BB-46FD529A8D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC2615B-1D7C-438F-971E-E5E6194DB90A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC2615B-1D7C-438F-971E-E5E6194DB90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC2615B-1D7C-438F-971E-E5E6194DB90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC2615B-1D7C-438F-971E-E5E6194DB90A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF89F24F-F680-4B30-B8A9-50D96BB7642F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF89F24F-F680-4B30-B8A9-50D96BB7642F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF89F24F-F680-4B30-B8A9-50D96BB7642F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF89F24F-F680-4B30-B8A9-50D96BB7642F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
