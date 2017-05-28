@@ -30,7 +30,7 @@ namespace LungCancer.TrainingDataGenerator
             entriestListBox.DataSource = dataSamples;
             descriptionsData = DescriptionData.Parse("CLNDAT_EN.txt").ToList();
 
-            //OpenFolder(@"D:\System\Seba\Pulpit\ppo\All247images");
+            OpenFolder(@"D:\System\Seba\Pulpit\ppo\All247images");
         }
 
         private void OpenFolderToolStripMenuItem_Click(object sender, EventArgs e)

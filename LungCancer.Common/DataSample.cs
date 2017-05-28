@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ConvNetSharp.Volume;
-using ConvNetSharp.Volume.GPU.Single;
 using Emgu.CV;
 using Emgu.CV.Structure;
 
@@ -21,10 +19,10 @@ namespace LungCancer.Common
             return $"{isMalicious} {X} {Y} {new FileInfo(FileName).Name}";
         }
 
-        public static void GenerateVolumes(List<DataSample> dataSamples, int windowSize, out Volume trainingSamples, out Volume trainingLabels)
+        public static void GenerateTrainingData(List<DataSample> dataSamples, int windowSize, out float[] trainingData, out float[] labelsData)
         {
-            float[] trainingData = new float[windowSize * windowSize * dataSamples.Count];
-            float[] labelsData = new float[2 * dataSamples.Count];
+            trainingData = new float[windowSize * windowSize * dataSamples.Count];
+            labelsData = new float[2 * dataSamples.Count];
             
             var images = dataSamples.GroupBy(sample => sample.FileName);
 
@@ -32,7 +30,9 @@ namespace LungCancer.Common
 
             foreach (var imageSamples in images)
             {
-                var image = RawParser.Open(imageSamples.Key)
+                var filePath = imageSamples.Key.Replace("C:\\Users\\Kuba\\Documents\\ppo", "D:\\System\\Seba\\Pulpit\\ppo");
+
+                var image = RawParser.Open(filePath)
                     .Convert<Gray, float>()
                     .Mul(1.0 / 4096.0);
 
@@ -43,9 +43,6 @@ namespace LungCancer.Common
                     labelsData[i++ + (sample.IsMalicious ? 1 : 0)] = 1.0f;
                 }
             }
-
-            trainingSamples = new Volume(trainingData, new Shape(windowSize, windowSize, 1, dataSamples.Count));
-            trainingLabels = new Volume(labelsData, new Shape(1, 1, 2, dataSamples.Count));
         }
 
         private static void GenerateData(Image<Gray, float> image, int sourceX, int sourceY, int windowSize, float[] data, int startIndex)
